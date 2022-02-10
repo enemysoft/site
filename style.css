@@ -151,6 +151,7 @@ hr {
     font-size: 17px;
     position: relative;
     z-index: 1;
+    transition: 0.3s;
 }
 
 .nav li a:hover {
