@@ -23,6 +23,37 @@ body {
 footer {
 }
 
+h1 {
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 18.0pt;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 18.0pt;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+    padding: 20px
+}
+
+p {
+    color: #999999;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12.0pt;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .t1 {
     color: #ff2f00;
     font-family: "Lato", sans-serif;
