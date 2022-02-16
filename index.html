@@ -46,12 +46,12 @@
 
     </div>
     <div style="width: 500px; margin-bottom: 60px; padding-top: 20px; padding-bottom: 20px; display: flex; align-items: center; background-color: white; outline: 1px solid black; outline-color: #ff2f00; outline-offset: -1px; margin-left: auto; margin-right: auto;">
-        <img src="./images/qr.png" width="100" height="100px" style="border: 2px solid black; border-radius: 10px; margin-left: 40px;">
+        <img id='qr' src="images/btc.qr.png" width="100" height="100px" style="padding: 8px; border: 2px solid black; border-radius: 12px; margin-left: 40px;">
         <div style="padding-left: 40px;">
             <div class=t2 id='CallToAction' style="line-height: 0.8; color: black; text-align: left;">Donate Bitcoin</div>
             <div class=t3 style="padding-top: 15px; padding-bottom: 15px; text-align: left; width: 250px;color: black;">Scan the QR code or send to the address below</div>
             <div style="display: flex;">
-                <div class=t3 id='Address' style="background: white; outline: solid black 1px; width: 200px; line-height: 30px;">3KjS99Isuw7Uwu3E</div>
+                <div class=t3 id='Address' style="background: white; outline: solid black 1px; width: 200px; line-height: 30px; overflow: hidden; text-overflow: ellipsis;">bc1qxjh4kwamr798ya6fgkylx50qcgwxa9val4k892</div>
                 <button class='b2s active' id='CopyBtn' onclick="Copy()" style="height: 30px; width: 60px; outline: 1px solid #ff2f00; line-height: 30px;">Copy</button>
             </div>  
         </div>
@@ -109,7 +109,8 @@
 
 <script>
     function setBTC() {
-        document.getElementById("Address").innerHTML = '3KjS99Isuw7Uwu3E'
+        document.getElementById("Address").innerHTML = 'bc1qxjh4kwamr798ya6fgkylx50qcgwxa9val4k892';
+        document.getElementById("qr").src = 'images/btc.qr.png';
         document.getElementById("CallToAction").innerHTML = 'Donate Bitcoin';
 
         document.getElementById("BTCbtn").className = 'b2s active'
@@ -123,7 +124,8 @@
     }
 
     function setETH() {
-        document.getElementById("Address").innerHTML = '3KjS99Isuw7Uwu3E'
+        document.getElementById("Address").innerHTML = '0x233822f7f993115f07500A436E8BD0aBbDF00e35';
+        document.getElementById("qr").src = 'images/eth.qr.png';
         document.getElementById("CallToAction").innerHTML = 'Donate Ethereum';
 
         document.getElementById("BTCbtn").className = 'b2s'
@@ -137,7 +139,8 @@
     }
 
     function setLTC() {
-        document.getElementById("Address").innerHTML = '3KjS99Isuw7Uwu3E'
+        document.getElementById("Address").innerHTML = 'LY4vfJvGi6eGXic49Jkytd5F5Amcx4m2Ui';
+        document.getElementById("qr").src = 'images/ltc.qr.png';
         document.getElementById("CallToAction").innerHTML = 'Donate Litecoin';
 
         document.getElementById("BTCbtn").className = 'b2s'
@@ -151,7 +154,8 @@
     }
 
     function setUSDT() {
-        document.getElementById("Address").innerHTML = '3KjS99Isuw7Uwu3E'
+        document.getElementById("Address").innerHTML = '0x233822f7f993115f07500A436E8BD0aBbDF00e35';
+        document.getElementById("qr").src = 'images/usdt.qr.png';
         document.getElementById("CallToAction").innerHTML = 'Donate Tether';
 
         document.getElementById("BTCbtn").className = 'b2s'
@@ -165,7 +169,8 @@
     }
 
     function setDASH() {
-        document.getElementById("Address").innerHTML = '3KjS99Isuw7Uwu3E'
+        document.getElementById("Address").innerHTML = 'XiX7pH9Uwwh5huXpCEU7S4jdRCihrE1L8R';
+        document.getElementById("qr").src = 'images/dash.qr.png';
         document.getElementById("CallToAction").innerHTML = 'Donate Dash';
 
         document.getElementById("BTCbtn").className = 'b2s'
