@@ -26,7 +26,32 @@
 
   <div class=t1 style="padding-top: 58px;"><img src="./images/logo light.png" width="199.25px" height="40px"></div>
   <div class=t1 style="padding: 50px;">Support for more free software</div>
-  <button class=b1 onclick="window.location='donate.html';" style="height:35px;width:170px" type="button">Donate</button>
+  <button class=b1 id='DonateBtn' onclick="Donate()" style="height:35px;width:170px" type="button">Donate</button>
+
+<div id='DonateBox' style="visibility: hidden; max-height: 0px; opacity: 0;">
+    <hr>
+    <div style="width: 500px; margin-top: 60px; margin-left: auto; margin-right: auto; text-align: left; display: flex; position: relative; left: -0.5px;">
+
+        <button class=b2s id='BTCbtn' onclick="setBTC()" style="justify-content: center; height: 30px; width: 120px; color: white; background-color: #ff2f00; border-color: #ff2f00;"><img src="./images/btc.png" width="20px" height="20px" style="padding-right: 7px;">Bitcoin</button>
+
+        <button class=b2s id='ETHbtn' onclick="setETH()" style="justify-content: center; height: 30px; width: 120px; color: black; background-color: lightgrey; border-color: lightgrey;"><img src="./images/eth.png" width="20px" height="20px" style="padding-right: 7px;">Ethereum</button>
+
+    </div>
+    <div style="width: 500px; margin-bottom: 60px; padding-top: 20px; padding-bottom: 20px; margin-left: auto; margin-right: auto; display: flex; align-items: center; background-color: white; border: 1px solid black; border-color: #ff2f00;">
+        <img src="./images/qr.png" width="100" height="100px" style="border: 2px solid black; border-radius: 10px; margin-left: 40px;">
+        <div style="padding-left: 40px;">
+            <div class=t2 id='CallToAction' style="line-height: 0.8; color: black; text-align: left;">Donate Bitcoin</div>
+            <div class=t3 style="padding-top: 15px; padding-bottom: 15px; text-align: left; width: 250px;color: black;">Scan the QR code or send to the address below</div>
+            <div style="display: flex;">
+                <div class=t3 id='Address' style="background: white; outline: solid black 1px; width: 200px;">3KjS99Isuw7Uwu3E</div>
+                <button class=b2s id='CopyBtn' onclick="Copy()" style="height: 30px; width: 60px; outline: solid black 1px; outline-color: #ff2f00;">Copy</button>
+            </div>  
+        </div>
+    </div>
+    <hr>
+</div>
+
+
   <div class=t2 style="padding-top: 50px;">Latest Developments</div>
   <div class=t3 style="padding-top: 10px;">free for personal use.</div>
   <div class=t3 style="padding-top: 10px; padding-bottom: 60px;">businesses must contact.</div>
@@ -75,6 +100,53 @@
 </footer>
 
 <script>
+    function setBTC() {
+        document.getElementById("Address").innerHTML = '3KjS99Isuw7Uwu3E'
+        document.getElementById("CallToAction").innerHTML = 'Donate Bitcoin';
+
+        document.getElementById("BTCbtn").style.backgroundColor = "#ff2f00";
+        document.getElementById("BTCbtn").style.borderColor = "#ff2f00";
+        document.getElementById("BTCbtn").style.color = "white";
+
+        document.getElementById("ETHbtn").style.backgroundColor = "lightgrey";
+        document.getElementById("ETHbtn").style.borderColor = "lightgrey";
+        document.getElementById("ETHbtn").style.color = "black";
+
+        document.getElementById("CopyBtn").style.width = '60px';
+        document.getElementById("CopyBtn").innerHTML = 'Copy';
+    }
+
+    function setETH() {
+        document.getElementById("Address").innerHTML = '9KjS99Isuw7Uwu3E'
+        document.getElementById("CallToAction").innerHTML = 'Donate Ethereum';
+
+        document.getElementById("BTCbtn").style.backgroundColor = "lightgrey";
+        document.getElementById("BTCbtn").style.borderColor = "lightgrey";
+        document.getElementById("BTCbtn").style.color = "black";
+
+        document.getElementById("ETHbtn").style.backgroundColor = "#ff2f00";
+        document.getElementById("ETHbtn").style.borderColor = "#ff2f00";
+        document.getElementById("ETHbtn").style.color = "white";
+
+        document.getElementById("CopyBtn").style.width = '60px';
+        document.getElementById("CopyBtn").innerHTML = 'Copy';
+    }
+
+    function Copy() {
+        navigator.clipboard.writeText(document.getElementById("Address").innerHTML);
+        document.getElementById("CopyBtn").style.width = '86px';
+        document.getElementById("CopyBtn").innerHTML = 'Copied &#x2713';
+    }
+
+    function Donate() {
+        document.getElementById("DonateBox").style = "max-height: 320px; padding-top: 60px; transition: 0.8s;"
+        document.getElementById("DonateBtn").onclick = RemoveDonate
+    }
+
+    function RemoveDonate() {
+        document.getElementById("DonateBox").style = "max-height: 0px; opacity: 0; padding-top: 0px; visibility: hidden; transition: 0.8s;"
+        document.getElementById("DonateBtn").onclick = Donate
+    }
 </script>
 
 
