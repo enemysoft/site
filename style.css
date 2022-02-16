@@ -134,6 +134,24 @@ p {
   transform: scale(1.05);
 }
 
+.b2s {
+  border: 1px solid black;
+  border-color: #ff2f00;
+  background-color: #ff2f00;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.b2s:hover {
+  cursor: pointer;
+}
+
 .container {
     display: flex;
     justify-content: center;
